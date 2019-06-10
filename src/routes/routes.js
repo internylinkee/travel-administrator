@@ -8,7 +8,7 @@ import {
 
 const routes = [
   // Home
-  { path: '/', exact: true, component: Home, requireLogin: '/login', breadcrumbName: 'Home' },
+  { path: '/', exact: true, component: Home, requireLogin: '/login' },
   // Login
   { path: '/login', exact: true, component: Login },
   // Not found

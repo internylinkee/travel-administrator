@@ -11,8 +11,6 @@ import {
   Dropdown
 } from 'antd';
 
-// import router from './router';
-
 const { Header } = Layout;
 const { Meta } = Card;
 const menu = (
@@ -49,8 +47,13 @@ const menu = (
 
 );
 
-// eslint-disable-next-line react/prefer-stateless-function
+
 class header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <Header>
