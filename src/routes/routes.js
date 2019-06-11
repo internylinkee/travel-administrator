@@ -3,7 +3,9 @@
 import {
   Home,
   Login,
-  NotFound
+  NotFound,
+  ListPosts,
+  DetailPost
 } from 'containers';
 
 const routes = [
@@ -11,8 +13,12 @@ const routes = [
   { path: '/', exact: true, component: Home, requireLogin: '/login' },
   // Login
   { path: '/login', exact: true, component: Login },
+  // Post
+  { path: '/listposts', exact: true, component: ListPosts },
+  { path: '/detailpost', exact: true, component: DetailPost },
   // Not found
   { component: NotFound }
+
 ];
 
 export default routes;
