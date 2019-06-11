@@ -35,8 +35,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props);
-
     if (this.isDontUseMasterLayout()) {
       return (<RenderRoutes history={this.props.history} routes={this.props.routes} />);
     }
