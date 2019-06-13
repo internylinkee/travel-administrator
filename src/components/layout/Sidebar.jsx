@@ -5,6 +5,7 @@ import {
   Typography,
   Layout
 } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { SubMenu } = Menu;
 const { Title } = Typography;
@@ -17,14 +18,32 @@ export default function sidebar(props) {
         <Title level={2}>VietNamGo Travel</Title>
       </div>
       <Menu defaultSelectedKeys={['1']} mode="inline" theme="light">
+        {/* TODO: Chưa xử lý được sự kiện Active khi click lần đầu của Menu.Item */}
         <Menu.Item key="1">
-          <Icon type="area-chart" />
-          <span>Dashboard</span>
+          <Link to="/">
+            <Icon type="area-chart" />
+            <span>Dashboard</span>
+          </Link>
         </Menu.Item>
-        <Menu.Item key="2">
-          <Icon type="read" />
-          <span>Bài viết</span>
-        </Menu.Item>
+        <SubMenu
+          key="2"
+          title={(
+            <span>
+              <Icon type="read" />
+              Post
+            </span>
+          )}
+        >
+          <Menu.Item key="item1">
+            <Link to="/posts">Reviews</Link>
+          </Menu.Item>
+          <Menu.Item key="item2">
+            <Link to="/questions">Questions</Link>
+          </Menu.Item>
+          <Menu.Item key="item3">
+            <Link to="/tours">Tours</Link>
+          </Menu.Item>
+        </SubMenu>
         <SubMenu
           key="3"
           title={(
@@ -34,9 +53,9 @@ export default function sidebar(props) {
             </span>
           )}
         >
-          <Menu.Item key="item1">Member</Menu.Item>
-          <Menu.Item key="item2">Tour Guide</Menu.Item>
-          <Menu.Item key="item3">Admin</Menu.Item>
+          <Menu.Item key="item4">Member</Menu.Item>
+          <Menu.Item key="item5">Tour Guide</Menu.Item>
+          <Menu.Item key="item6">Admin</Menu.Item>
         </SubMenu>
         <Menu.Item key="4">
           <Icon type="warning" />
