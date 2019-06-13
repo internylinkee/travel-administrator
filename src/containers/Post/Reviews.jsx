@@ -47,7 +47,7 @@ for (let i = 4; i < 46; i++) {
   });
 }
 
-class listPosts extends React.Component {
+class reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -176,6 +176,6 @@ class listPosts extends React.Component {
   }
 }
 
-export default listPosts;
+export default reviews;
 
-listPosts.displayName = 'ListPosts';
+reviews.displayName = 'Reviews';
