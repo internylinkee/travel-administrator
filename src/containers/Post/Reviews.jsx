@@ -1,12 +1,32 @@
 import React from 'react';
-
 import {
   Table,
   Tag,
   Input,
   Button,
-  Icon
+  Icon,
+  Typography,
+  Layout
 } from 'antd';
+import { isEmpty } from 'lodash';
+
+const { Title } = Typography;
+const { Content } = Layout;
+
+const DATA_BUTTON = {
+  PUBLIC: 'PUBLIC',
+  PRIVATE: 'PRIVATE',
+  COLLECTION: {
+    PUBLIC: {
+      type: 'primary',
+      content: 'Public'
+    },
+    PRIVATE: {
+      type: 'danger',
+      content: 'Private'
+    }
+  }
+};
 
 const data = [
   {
@@ -32,6 +52,7 @@ const data = [
   }
 ];
 
+// eslint-disable-next-line no-plusplus
 for (let i = 4; i < 46; i++) {
   data.push({
     key: i,
@@ -43,9 +64,13 @@ for (let i = 4; i < 46; i++) {
 }
 
 class listPosts extends React.Component {
-  state = {
-    searchText: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      buttonKey: DATA_BUTTON.PUBLIC,
+      searchText: ''
+    };
+  }
 
   getColumnSearchProps = dataIndex => ({
     filterDropdown: ({
@@ -100,12 +125,40 @@ class listPosts extends React.Component {
     this.setState({ searchText: '' });
   };
 
+  /**
+   * Xử lý sư kiện bật tắt trạng thái của button
+   * @returns {void} update state
+   * @memberof listPosts
+   */
+  handleToggleStatusButton = () => {
+    let buttonKey = DATA_BUTTON.PUBLIC;
+    if (this.state.buttonKey === DATA_BUTTON.PUBLIC) {
+      buttonKey = DATA_BUTTON.PRIVATE;
+    }
+    this.setState({ buttonKey });
+  }
+
+  /**
+   *Get data button
+   * @param {string} attr atrribute name
+   * @param {string} key button key
+   * @returns {string} data button theo attribute name
+   * @memberof listPosts
+   */
+  getDataButton = (attr = 'type', key = DATA_BUTTON.PUBLIC) => {
+    const data = DATA_BUTTON.COLLECTION;
+    if (isEmpty(data[key]) || isEmpty(data[key][attr])) {
+      return '';
+    }
+    return data[key][attr];
+  }
+
   render() {
     const columns = [
       {
         title: '#',
         dataIndex: 'key',
-        key: 'id'
+        key: 'key'
       },
       {
         title: 'Title',
@@ -154,12 +207,28 @@ class listPosts extends React.Component {
         key: 'action',
         // eslint-disable-next-line react/display-name
         render: (text, record) => (
-          <span>Private</span>
+          <span>
+            <Button
+              ghost
+              name="buttonStatus"
+              onClick={this.handleToggleStatusButton}
+              type={this.getDataButton('type', this.state.buttonKey)}
+            >
+              {this.getDataButton('content', this.state.buttonKey)}
+            </Button>
+          </span>
         )
       }
 
     ];
-    return <Table columns={columns} dataSource={data} />;
+    return (
+      <div>
+        <Title level={3}>Danh sách bài viết</Title>
+        <Content>
+          <Table columns={columns} dataSource={data} />
+        </Content>
+      </div>
+    );
   }
 }
 
