@@ -1,9 +1,18 @@
 import React from 'react';
+import { Layout, Typography } from 'antd';
+
+const { Content } = Layout;
+const { Title } = Typography;
 
 export default function home(props) {
   return (
-    <div>Home Page Admin</div>
-  );
-}
+    <div>
+      <Title level={3}>Dash boash</Title>
+      <Content>
 
-home.displayName = 'Home';
+      </Content>
+    </div>
+      );
+    }
+
+    home.displayName = 'Home';
