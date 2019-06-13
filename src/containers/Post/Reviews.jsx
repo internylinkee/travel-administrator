@@ -8,25 +8,9 @@ import {
   Typography,
   Layout
 } from 'antd';
-import { isEmpty } from 'lodash';
 
 const { Title } = Typography;
 const { Content } = Layout;
-
-const DATA_BUTTON = {
-  PUBLIC: 'PUBLIC',
-  PRIVATE: 'PRIVATE',
-  COLLECTION: {
-    PUBLIC: {
-      type: 'primary',
-      content: 'Public'
-    },
-    PRIVATE: {
-      type: 'danger',
-      content: 'Private'
-    }
-  }
-};
 
 const data = [
   {
@@ -67,7 +51,6 @@ class listPosts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonKey: DATA_BUTTON.PUBLIC,
       searchText: ''
     };
   }
@@ -125,34 +108,6 @@ class listPosts extends React.Component {
     this.setState({ searchText: '' });
   };
 
-  /**
-   * Xử lý sư kiện bật tắt trạng thái của button
-   * @returns {void} update state
-   * @memberof listPosts
-   */
-  handleToggleStatusButton = () => {
-    let buttonKey = DATA_BUTTON.PUBLIC;
-    if (this.state.buttonKey === DATA_BUTTON.PUBLIC) {
-      buttonKey = DATA_BUTTON.PRIVATE;
-    }
-    this.setState({ buttonKey });
-  }
-
-  /**
-   *Get data button
-   * @param {string} attr atrribute name
-   * @param {string} key button key
-   * @returns {string} data button theo attribute name
-   * @memberof listPosts
-   */
-  getDataButton = (attr = 'type', key = DATA_BUTTON.PUBLIC) => {
-    const data = DATA_BUTTON.COLLECTION;
-    if (isEmpty(data[key]) || isEmpty(data[key][attr])) {
-      return '';
-    }
-    return data[key][attr];
-  }
-
   render() {
     const columns = [
       {
@@ -161,26 +116,26 @@ class listPosts extends React.Component {
         key: 'key'
       },
       {
-        title: 'Title',
+        title: 'Tiêu đề',
         dataIndex: 'title',
         key: 'title',
         width: '30%',
         ...this.getColumnSearchProps('title')
       },
       {
-        title: 'Author',
+        title: 'Tác giả',
         dataIndex: 'author',
         key: 'author',
         ...this.getColumnSearchProps('author')
       },
       {
-        title: 'Location',
+        title: 'Địa điểm',
         dataIndex: 'location',
         key: 'location',
         ...this.getColumnSearchProps('location')
       },
       {
-        title: 'Tags',
+        title: 'Thẻ',
         key: 'tags',
         dataIndex: 'tags',
         // eslint-disable-next-line react/display-name
@@ -203,21 +158,10 @@ class listPosts extends React.Component {
         )
       },
       {
-        title: 'Action',
-        key: 'action',
+        title: 'Trạng thái',
+        key: 'status',
         // eslint-disable-next-line react/display-name
-        render: (text, record) => (
-          <span>
-            <Button
-              ghost
-              name="buttonStatus"
-              onClick={this.handleToggleStatusButton}
-              type={this.getDataButton('type', this.state.buttonKey)}
-            >
-              {this.getDataButton('content', this.state.buttonKey)}
-            </Button>
-          </span>
-        )
+        render: () => (<Tag color="#108ee9">Hiển thị</Tag>)
       }
 
     ];

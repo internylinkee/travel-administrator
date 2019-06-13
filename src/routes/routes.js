@@ -18,8 +18,8 @@ const routes = [
   // Login
   { path: '/login', exact: true, component: Login, isUseMasterLayout: false },
   // Post
-  { path: '/posts', exact: true, component: Reviews },
-  { path: '/posts/:id/detail', exact: true, component: ReviewDetail },
+  { path: '/reviews', exact: true, component: Reviews },
+  { path: '/reviews/:id/detail', exact: true, component: ReviewDetail },
   { path: '/questions', exact: true, component: Questions },
   { path: '/questions/:id/detail', exact: true, component: QuestionsDetail },
   { path: '/tours', exact: true, component: Tours },

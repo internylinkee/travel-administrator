@@ -116,26 +116,26 @@ class tours extends React.Component {
         key: 'key'
       },
       {
-        title: 'Title',
+        title: 'Tiêu đề',
         dataIndex: 'title',
         key: 'title',
         width: '30%',
         ...this.getColumnSearchProps('title')
       },
       {
-        title: 'Author',
+        title: 'Tác giả',
         dataIndex: 'author',
         key: 'author',
         ...this.getColumnSearchProps('author')
       },
       {
-        title: 'Location',
+        title: 'Địa điểm',
         dataIndex: 'location',
         key: 'location',
         ...this.getColumnSearchProps('location')
       },
       {
-        title: 'Tags',
+        title: 'Thẻ',
         key: 'tags',
         dataIndex: 'tags',
         // eslint-disable-next-line react/display-name
@@ -158,10 +158,10 @@ class tours extends React.Component {
         )
       },
       {
-        title: 'Action',
-        key: 'action',
+        title: 'Trạng thái',
+        key: 'status',
         // eslint-disable-next-line react/display-name
-        render: () => <Button ghost type="primary">Public</Button>
+        render: () => (<Tag color="#108ee9">Hiển thị</Tag>)
       }
 
     ];

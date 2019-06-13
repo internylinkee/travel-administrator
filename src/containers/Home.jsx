@@ -12,7 +12,7 @@ export default function home(props) {
 
       </Content>
     </div>
-      );
-    }
+  );
+}
 
-    home.displayName = 'Home';
+home.displayName = 'Home';

@@ -35,7 +35,7 @@ export default function sidebar(props) {
           )}
         >
           <Menu.Item key="item1">
-            <Link to="/posts">Reviews</Link>
+            <Link to="/reviews">Reviews</Link>
           </Menu.Item>
           <Menu.Item key="item2">
             <Link to="/questions">Questions</Link>
