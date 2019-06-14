@@ -8,27 +8,55 @@ import {
 import { connect } from 'react-redux';
 // import QueryString from 'query-string';
 // import { Cookies } from 'react-cookie';
+import { isEmpty } from 'lodash';
+import { MasterLayout } from 'containers';
 import ConnectedSwitch from './ConnectedSwitch';
 
 // const cookies = new Cookies();
 
-const RenderRoutes = ({ routes, auth, location }) => {
-  // const query = QueryString.parse(location.hash);
-  // let token;
-  // let error;
-  // if (query.access_token) {
-  //   token = {
-  //     accessToken: query.access_token,
-  //     expiresIn: query.expires_in,
-  //     tokenType: query.token_type,
-  //     sessionState: query.session_state,
-  //     state: query.state
-  //   };
-  // }
+const renderComponent = (route, props) => {
+  if (isEmpty(route)) {
+    return null;
+  }
+  const { isUseMasterLayout = true } = route;
+  if (isUseMasterLayout) {
+    return (
+      <MasterLayout>
+        <route.component
+          {...props}
+          routes={route.routes}
+        />
+      </MasterLayout>
+    );
+  }
+  return (
+    <route.component
+      {...props}
+      routes={route.routes}
+    />
+  );
+};
 
-  // if (query.error) {
-  //   error = query;
-  // }
+const RenderRoutes = ({ routes, auth, location }) => {
+  /* TODO: enable check token with API */
+  /*
+    const query = QueryString.parse(location.hash);
+    let token;
+    let error;
+    if (query.access_token) {
+      token = {
+        accessToken: query.access_token,
+        expiresIn: query.expires_in,
+        tokenType: query.token_type,
+        sessionState: query.session_state,
+        state: query.state
+      };
+    }
+
+    if (query.error) {
+      error = query;
+    }
+  */
 
   if (!routes) {
     return null;
@@ -43,6 +71,7 @@ const RenderRoutes = ({ routes, auth, location }) => {
           path={route.path}
           render={props => (
             <React.Fragment>
+              {/* TODO: enable check token with API */}
               {/* {
                 (
                   (error || token) || (
@@ -71,10 +100,7 @@ const RenderRoutes = ({ routes, auth, location }) => {
                   />
                 )
               } */}
-              <route.component
-                {...props}
-                routes={route.routes}
-              />
+              {renderComponent(route, props)}
             </React.Fragment>
           )}
         />

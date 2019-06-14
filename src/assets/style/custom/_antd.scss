@@ -24,8 +24,7 @@
 .ant-layout-content {
   background: #fff;
   color: #000;
-  min-height: 100vh;
-  line-height: 120px;
+  min-height: 760px;
   margin: 24px;
   padding: 24px;
 }
@@ -51,6 +50,11 @@
 
 .info-user-name {
   margin: 0 10px;
+}
+
+h3.ant-typography {
+  margin: 0;
+  padding: 24px 24px 0;
 }
 
 > .code-box-demo > div > .ant-layout {

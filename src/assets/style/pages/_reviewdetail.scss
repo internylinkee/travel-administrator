@@ -1,0 +1,42 @@
+h1 {
+  font-family: unset;
+  text-transform: none;
+  color: #d6c7bc;
+  font-weight: 700;
+  text-align: left;
+}
+.count-post {
+  margin: 0 5px;
+  font-size: 14px;
+  font-style: oblique;
+  color: #999;
+}
+.text-time{
+  font-size: 14px;
+  font-style: oblique;
+  margin-right: 15px;
+  color: #999;
+  position: relative;
+}
+.description-post {
+  margin-top: 20px;
+  text-align: justify;
+  color: #888;
+}
+.content-post {
+  text-align: justify;
+  color: #000;
+}
+.tag-post {
+  float: right;
+}
+
+.divider::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 1px;
+  top: 0;
+  left: 112px;
+  background: #9999998a;
+}

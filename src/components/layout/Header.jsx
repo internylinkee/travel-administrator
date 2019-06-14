@@ -58,10 +58,7 @@ class header extends React.Component {
     return (
       <Header>
         <Row>
-          <Col span={12}>
-            <p>Dashboard</p>
-          </Col>
-          <Col span={12} style={{ textAlign: 'right' }}>
+          <Col style={{ textAlign: 'right' }}>
             <Dropdown overlay={menu} trigger={['click']}>
               <a className="ant-dropdown-link" href="true">
                 <Avatar src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />

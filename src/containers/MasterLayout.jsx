@@ -8,8 +8,6 @@ import {
   Sidebar as SidebarComponent
 } from 'components/layout';
 
-const { Content } = Layout;
-
 class MasterLayout extends PureComponent {
   constructor(props) {
     super(props);
@@ -22,9 +20,9 @@ class MasterLayout extends PureComponent {
         <SidebarComponent />
         <Layout style={{ marginLeft: '300px' }}>
           <HeaderComponent />
-          <Content>
+          <div>
             {this.props.children}
-          </Content>
+          </div>
         </Layout>
       </Layout>
     );

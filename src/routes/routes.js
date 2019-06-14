@@ -3,16 +3,30 @@
 import {
   Home,
   Login,
-  NotFound
+  NotFound,
+  Reviews,
+  ReviewDetail,
+  Questions,
+  QuestionsDetail,
+  Tours,
+  TourDetail
 } from 'containers';
 
 const routes = [
   // Home
   { path: '/', exact: true, component: Home, requireLogin: '/login' },
   // Login
-  { path: '/login', exact: true, component: Login },
+  { path: '/login', exact: true, component: Login, isUseMasterLayout: false },
+  // Post
+  { path: '/reviews', exact: true, component: Reviews },
+  { path: '/reviews/:id/detail', exact: true, component: ReviewDetail },
+  { path: '/questions', exact: true, component: Questions },
+  { path: '/questions/:id/detail', exact: true, component: QuestionsDetail },
+  { path: '/tours', exact: true, component: Tours },
+  { path: '/tours/:id/detail', exact: true, component: TourDetail },
   // Not found
-  { component: NotFound }
+  { component: NotFound, isUseMasterLayout: false }
+
 ];
 
 export default routes;

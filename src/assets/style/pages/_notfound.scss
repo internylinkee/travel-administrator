@@ -17,11 +17,11 @@ $legHeight: $digitHeight / 4;
 
 // =========
 
-body {
+.b-container {
   background-color: $bgColor;
 }
 
-h1 {
+.text-notfound {
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
   color: $textColor;
