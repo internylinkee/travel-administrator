@@ -9,7 +9,10 @@ import {
   Questions,
   QuestionsDetail,
   Tours,
-  TourDetail
+  TourDetail,
+  Admins,
+  Members,
+  TourGuides
 } from 'containers';
 
 const routes = [
@@ -24,6 +27,10 @@ const routes = [
   { path: '/questions/:id/detail', exact: true, component: QuestionsDetail },
   { path: '/tours', exact: true, component: Tours },
   { path: '/tours/:id/detail', exact: true, component: TourDetail },
+  // Uses
+  { path: '/admins', exact: true, component: Admins },
+  { path: '/members', exact: true, component: Members },
+  { path: '/tourguides', exact: true, component: TourGuides },
   // Not found
   { component: NotFound, isUseMasterLayout: false }
 
