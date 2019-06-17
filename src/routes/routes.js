@@ -12,7 +12,10 @@ import {
   TourDetail,
   Admins,
   Members,
-  TourGuides
+  TourGuides,
+  TourGuideDetail,
+  MemberDetail,
+  AdminDetail
 } from 'containers';
 
 const routes = [
@@ -29,8 +32,11 @@ const routes = [
   { path: '/tours/:id/detail', exact: true, component: TourDetail },
   // Uses
   { path: '/admins', exact: true, component: Admins },
+  { path: '/admins/:id/detail', exact: true, component: AdminDetail },
   { path: '/members', exact: true, component: Members },
+  { path: '/members/:id/detail', exact: true, component: MemberDetail },
   { path: '/tourguides', exact: true, component: TourGuides },
+  { path: '/tourguides/:id/detail', exact: true, component: TourGuideDetail },
   // Not found
   { component: NotFound, isUseMasterLayout: false }
 

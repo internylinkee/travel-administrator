@@ -9,5 +9,8 @@ export { default as QuestionsDetail } from './Post/QuestionsDetail';
 export { default as Tours } from './Post/Tours';
 export { default as TourDetail } from './Post/TourDetail';
 export { default as Admins } from './Users/Admins';
+export { default as AdminDetail } from './Users/AdminDetail';
 export { default as Members } from './Users/Members';
+export { default as MemberDetail } from './Users/MemberDetail';
 export { default as TourGuides } from './Users/TourGuides';
+export { default as TourGuideDetail } from './Users/TourGuideDetail';
