@@ -60,7 +60,7 @@ export default function sidebar(props) {
             <Link to="/tourguides">Tour Guides</Link>
           </Menu.Item>
           <Menu.Item key="item6">
-            <Link to="/admins">Admin</Link>
+            <Link to="/admins">Admins</Link>
           </Menu.Item>
         </SubMenu>
         <Menu.Item key="4">
