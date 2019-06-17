@@ -19,7 +19,7 @@ const menu = (
       <Card
         actions={[
           <Button.Group>
-            <Button type="link">
+            <Button href="/profile" style={{ display: 'inline' }} type="link">
               <Icon type="folder" />
               Cá nhân
             </Button>

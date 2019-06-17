@@ -15,7 +15,9 @@ import {
   TourGuides,
   TourGuideDetail,
   MemberDetail,
-  AdminDetail
+  AdminDetail,
+  Profile,
+  AdminNew
 } from 'containers';
 
 const routes = [
@@ -37,6 +39,8 @@ const routes = [
   { path: '/members/:id/detail', exact: true, component: MemberDetail },
   { path: '/tourguides', exact: true, component: TourGuides },
   { path: '/tourguides/:id/detail', exact: true, component: TourGuideDetail },
+  { path: '/profile', exact: true, component: Profile },
+  { path: '/admins/create-new', exact: true, component: AdminNew },
   // Not found
   { component: NotFound, isUseMasterLayout: false }
 

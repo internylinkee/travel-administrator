@@ -67,8 +67,8 @@ class admins extends React.Component {
       },
       {
         title: 'Thao tác',
-        dataIndex: '',
-        key: 'x',
+        dataIndex: 'action',
+        key: 'action',
         render: () => <Button ghost size="small" type="danger">Khóa tài khoản</Button>
       }
     ];
@@ -78,7 +78,7 @@ class admins extends React.Component {
         <Content>
           <Row style={{ marginBottom: 20 }}>
             <Col span={6}>
-              <Button size="large" type="primary">
+              <Button href="/admins/create-new" size="large" type="primary">
                 Thêm mới
               </Button>
             </Col>
@@ -90,7 +90,6 @@ class admins extends React.Component {
               />
             </Col>
           </Row>
-
           <Table columns={columns} dataSource={data} />
         </Content>
       </div>

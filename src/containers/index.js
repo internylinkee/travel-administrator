@@ -14,3 +14,5 @@ export { default as Members } from './Users/Members';
 export { default as MemberDetail } from './Users/MemberDetail';
 export { default as TourGuides } from './Users/TourGuides';
 export { default as TourGuideDetail } from './Users/TourGuideDetail';
+export { default as Profile } from './Users/Profile';
+export { default as AdminNew } from './Users/AdminNew';
