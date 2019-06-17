@@ -53,9 +53,15 @@ export default function sidebar(props) {
             </span>
           )}
         >
-          <Menu.Item key="item4">Member</Menu.Item>
-          <Menu.Item key="item5">Tour Guide</Menu.Item>
-          <Menu.Item key="item6">Admin</Menu.Item>
+          <Menu.Item key="item4">
+            <Link to="/members">Members</Link>
+          </Menu.Item>
+          <Menu.Item key="item5">
+            <Link to="/tourguides">Tour Guides</Link>
+          </Menu.Item>
+          <Menu.Item key="item6">
+            <Link to="/admins">Admins</Link>
+          </Menu.Item>
         </SubMenu>
         <Menu.Item key="4">
           <Icon type="warning" />

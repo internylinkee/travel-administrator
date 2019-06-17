@@ -138,7 +138,6 @@ class tours extends React.Component {
         title: 'Thẻ',
         key: 'tags',
         dataIndex: 'tags',
-        // eslint-disable-next-line react/display-name
         render: tags => (
           <span>
             {tags.map((tag) => {

@@ -40,3 +40,10 @@ h1 {
   left: 112px;
   background: #9999998a;
 }
+.b-listpost {
+  padding: 0 24px;
+
+  .ant-card-body {
+    padding: 0;
+  }
+}
